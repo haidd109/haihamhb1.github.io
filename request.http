@@ -1,0 +1,8 @@
+GET   http://localhost:3000/categories/11
+###
+PUT http://localhost:3000/categories/11
+Content-Type: application/json
+
+{
+        "name":"Đinh Đức Hải"
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./ad-home.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus"></i>
+        <span class="logo_name">Nike</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="../index.html" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Trang chủ</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="profile-details">
+          <!--<img src="images/profile.jpg" alt="">-->
+          <span class="admin_name">Prem Shahi</span>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="title">
+              Products
+              <button class="btn_add">
+                <a href="./add_product.html">Thêm mới</a>
+              </button>
+            </div>
+            <div class="sales-details">
+              <table class="show_product">
+                <thead>
+                  <tr>
+                    <td class="show_cate--id">ID</td>
+                    <td class="show_cate--name">Name</td>
+                    <td class="show_product--price">Price</td>
+                    <td class="show_product--detail">Detail</td>
+                    <td class="show_product--image">Image</td>
+                    <td class="show_product--cate_id">Cate_id</td>
+                    <td class="show_btn">Chức năng</td>
+                  </tr>
+                </thead>
+                <tbody class="show_cate"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+    <script src="../baseAPI.js"></script>
+    <script src="./app/product/productsService.js"></script>
+    <script src="./app/product/renderProduct.js"></script>
+    <script src="./app/product/deleteProduct.js"></script>
+    <script src="./app/renderMenu.js"></script>
+  </body>
+</html>
